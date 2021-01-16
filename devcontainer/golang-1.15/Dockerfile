@@ -3,9 +3,9 @@ FROM golang:1.15-buster
 #
 # set argument
 ARG USER_NAME=vscode
-ARG USER_UID=1000
-ARG GROUP_NAME=$USER_ID
-ARG USER_GID=$USER_UID
+ARG USER_ID=1000
+ARG GROUP_NAME=$USER_NAME
+ARG GROUP_ID=$USER_ID
 #
 # install packages and tools
 ENV DEBIAN_FRONTEND=noninteractive
@@ -26,8 +26,8 @@ RUN apt-get update \
 	&& rm -rf /var/lib/apt/lists/*
 #
 # create noroot user
-RUN groupadd --gid $GROUP_GID $GROUP_NAME \
-    && useradd -s /bin/bash --uid $USER_UID --gid $GROUP_GID -m $USER_NAME \
+RUN groupadd --gid $GROUP_ID $GROUP_NAME \
+    && useradd -s /bin/bash --uid $USER_ID --gid $GROUP_ID -m $USER_NAME \
     && echo $USER_NAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USER_NAME \
     && chmod 0440 /etc/sudoers.d/$USER_NAME
 #
