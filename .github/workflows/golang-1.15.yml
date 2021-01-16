@@ -18,8 +18,7 @@ jobs:
         uses: docker/build-push-action@v1
         with:
           push: false
-          context: ./devcontainer/${GITHUB_REF##*/}
-          file: ./Dockerfile
-          repository: ${{ secrets.DOCKERHUB_USERNAME }}/${GITHUB_REF##*/}
+          file: ./devcontainer/golang-1.15/Dockerfile
+          repository: ${{ secrets.DOCKERHUB_USERNAME }}/golang-1.15
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
