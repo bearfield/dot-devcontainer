@@ -2,9 +2,10 @@
 FROM golang:1.15-buster
 #
 # set argument
-ARG USERNAME=vscode
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
+ARG USER_NAME=vscode
+ARG USER_ID=1000
+ARG GROUP_NAME=$USER_NAME
+ARG GROUP_ID=$USER_ID
 #
 # install packages and tools
 ENV DEBIAN_FRONTEND=noninteractive
@@ -25,17 +26,17 @@ RUN apt-get update \
 	&& rm -rf /var/lib/apt/lists/*
 #
 # create noroot user
-RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
-    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-    && chmod 0440 /etc/sudoers.d/$USERNAME
+RUN groupadd --gid $GROUP_ID $GROUP_NAME \
+    && useradd -s /bin/bash --uid $USER_ID --gid $GROUP_ID -m $USER_NAME \
+    && echo $USER_NAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USER_NAME \
+    && chmod 0440 /etc/sudoers.d/$USER_NAME
 #
 # install Google Cloud SDK
-USER $USERNAME
+USER $USER_NAME
 RUN curl https://sdk.cloud.google.com > /tmp/install.sh \
     && bash /tmp/install.sh --disable-prompts \
-    && echo "source /home/vscode/google-cloud-sdk/completion.bash.inc" >> /home/$USERNAME/.bashrc \
-    && echo "source /home/vscode/google-cloud-sdk/path.bash.inc" >> /home/$USERNAME/.bashrc \
+    && echo "source /home/vscode/google-cloud-sdk/completion.bash.inc" >> /home/$USER_NAME/.bashrc \
+    && echo "source /home/vscode/google-cloud-sdk/path.bash.inc" >> /home/$USER_NAME/.bashrc \
     # crean up
     && rm -f /tmp/install.sh
 #
