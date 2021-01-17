@@ -4,8 +4,7 @@
 
     "settings": {
         "terminal.intergrated.shell.linux": "/bin/bash",
-        "go.gopath": "/go",
-        "go.interGopath": true,
+        "go.interGopath": false,
         "go.useLanguageServer": true,
         "go.toolsEnvVars": {
             "GO111MODULE": "on"
