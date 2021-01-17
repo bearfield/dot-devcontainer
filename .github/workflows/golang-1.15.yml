@@ -20,5 +20,3 @@ jobs:
           push: false
           file: ./devcontainer/golang-1.15/Dockerfile
           tags: ${{ secrets.DOCKERHUB_REPONAME }}/golang-1.15:test
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
