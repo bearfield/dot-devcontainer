@@ -1,6 +1,6 @@
 {
-    "name": "golang-1-15-buster",
-    "dockerFile": "Dockerfile",
+    "name": "golang-1.15",
+    "image": "kumanoryo/golang-1.15:latest",
 
     "settings": {
         "terminal.intergrated.shell.linux": "/bin/bash",
