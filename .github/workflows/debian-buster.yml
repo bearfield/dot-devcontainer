@@ -2,8 +2,9 @@ name: debian-buster docker image creation
 on:
   # schedule:
   #   - cron: '0 19 * * *'
-  branch:
-    - 'main'
+  push:
+    branches:
+      - 'main'
 jobs:
   push_to_registry:
     name: Build Docker image from Dockerfile
