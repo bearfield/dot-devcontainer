@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - 'golang-1.15'
-      - 'debian-buster'
 jobs:
   push_to_registry:
     name: Build Docker image from Dockerfile
