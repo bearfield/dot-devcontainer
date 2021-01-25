@@ -20,6 +20,7 @@ RUN apt-get update \
         sudo \
         zip \
         curl \
+        make \
     # crean up
     && apt-get autoremove -y \
     && apt-get clean -y \
