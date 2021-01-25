@@ -19,6 +19,7 @@ RUN apt-get update \
         lsb-release \
         sudo \
         zip \
+        curl \
     # crean up
     && apt-get autoremove -y \
     && apt-get clean -y \
