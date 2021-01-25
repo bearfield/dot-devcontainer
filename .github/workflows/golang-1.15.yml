@@ -1,7 +1,7 @@
 name: golang-1.15 docker image creation
 on:
   schedule:
-    - cron: '0 4 * * *'
+    - cron: '0 19 * * *'
 jobs:
   push_to_registry:
     name: Build Docker image from Dockerfile
