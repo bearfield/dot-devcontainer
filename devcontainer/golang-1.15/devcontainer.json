@@ -19,7 +19,10 @@
         "gopls": {
             "usePlaceholders": true
         },
-        "go.lintTool": "golangci-lint"
+        "go.lintTool": "golangci-lint",
+        "go.lintFlags": [
+            "--fast"
+        ]
     },
 
     "remoteUser": "vscode",
