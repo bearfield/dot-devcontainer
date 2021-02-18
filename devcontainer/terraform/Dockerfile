@@ -1,4 +1,4 @@
-FROM hashicorp/terraform:latest
+FROM debian:buster-slim
 #
 # set argument
 ARG USER_NAME=vscode
@@ -8,6 +8,11 @@ ARG GROUP_ID=$USER_ID
 #
 # install packages and tools
 ENV DEBIAN_FRONTEND=noninteractive
+#
+# Add HashiCorp Linux repository.
+RUN apt-get install -y curl \
+    && curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
+    && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 RUN apt-get update \
     # install debian packages
     && apt-get install -y \
@@ -19,8 +24,8 @@ RUN apt-get update \
         lsb-release \
         sudo \
         zip \
-        curl \
         make \
+        terraform \
     # crean up
     && apt-get autoremove -y \
     && apt-get clean -y \
