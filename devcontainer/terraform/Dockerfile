@@ -8,11 +8,6 @@ ARG GROUP_ID=$USER_ID
 #
 # install packages and tools
 ENV DEBIAN_FRONTEND=noninteractive
-#
-# Add HashiCorp Linux repository.
-RUN apt-get install -y curl \
-    && curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add - \
-    && echo "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" > /etc/apt/sources.list.d/hachicorp.list
 RUN apt-get update \
     # install debian packages
     && apt-get install -y \
@@ -24,7 +19,15 @@ RUN apt-get update \
         lsb-release \
         sudo \
         zip \
+        curl \
         make \
+        gnupg \
+#
+# Add HashiCorp Linux repository and install terraform.
+    && curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
+    && echo "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" > /etc/apt/sources.list.d/hachicorp.list \
+    && apt-get update \
+    && apt-get install -y \
         terraform \
     # crean up
     && apt-get autoremove -y \
