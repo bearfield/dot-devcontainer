@@ -4,6 +4,12 @@
 
     "settings": {
         "terminal.intergrated.shell.linux": "/bin/bash",
+        "[terraform]": {
+            "editor.formatOnSave": true
+        },
+        "terraform-ls.experimentalFeatures": {
+            "validateOnSave": true
+        },
     },
 
     "remoteUser": "vscode",
@@ -12,4 +18,7 @@
         "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
         "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
     ],
+    "extensions": [
+		"hashicorp.terraform"
+	],
 }
