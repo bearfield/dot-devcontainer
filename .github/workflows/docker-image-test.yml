@@ -10,6 +10,8 @@ jobs:
   push_to_registry:
     name: Build Docker image from Dockerfile
     runs-on: ubuntu-latest
+    env:
+      TERRAFORM_VERSION: "0.14.7"
     steps:
       - name: Get Branch Name
         run: echo "::set-output name=BRANCH_NAME::${GITHUB_REF##*/}"
@@ -28,4 +30,6 @@ jobs:
         with:
           push: false
           file: ./devcontainer/${{ steps.get-branch-name.outputs.BRANCH_NAME }}/Dockerfile
+          build-args: |
+            TERRAFORM_VERSION=${{ env.TERRAFORM_VERSION }}
           tags: ${{ secrets.DOCKERHUB_REPONAME }}/${{ steps.get-branch-name.outputs.BRANCH_NAME }}:test

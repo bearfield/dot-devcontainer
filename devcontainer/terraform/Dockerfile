@@ -5,6 +5,7 @@ ARG USER_NAME=vscode
 ARG USER_ID=1000
 ARG GROUP_NAME=$USER_NAME
 ARG GROUP_ID=$USER_ID
+ARG TERRAFORM_VERSION
 #
 # install packages and tools
 ENV DEBIAN_FRONTEND=noninteractive
@@ -28,7 +29,7 @@ RUN apt-get update \
     && echo "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" > /etc/apt/sources.list.d/hachicorp.list \
     && apt-get update \
     && apt-get install -y \
-        terraform \
+        terraform=$TERRAFORM_VERSION \
     # crean up
     && apt-get autoremove -y \
     && apt-get clean -y \
