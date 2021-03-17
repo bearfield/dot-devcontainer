@@ -15,8 +15,10 @@
           }
         },
         "[ruby]": {
-            "editor.formatOnSave": true
+            "editor.formatOnSave": true,
+            "editor.tabSize": 2
         },
+        "editor.detectIndentation": false,
         "ruby.format": "rubocop" ,
         "editor.formatOnSaveTimeout": 5000
     },
@@ -29,6 +31,8 @@
     ],
 
     "extensions": [
-		"rebornix.Ruby"
+		"rebornix.Ruby",
+    "misogi.ruby-rubocop",
+    "castwide.solargraph"
 	]
 }

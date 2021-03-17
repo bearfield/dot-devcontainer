@@ -27,7 +27,17 @@ RUN apt-get update \
 	&& rm -rf /var/lib/apt/lists/*
 #
 # install ruby gems
-RUN gem install rubocop reek \
+RUN gem install \
+    debase \
+    debride \
+    faster \
+    faraday-net_http \
+    rcodetools \
+    reek \
+    rubocop \
+    ruby-debug-ide \
+    ruby-lint \
+    solargraph \
     && gem cleanup
 #
 # create noroot user
