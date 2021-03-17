@@ -19,3 +19,8 @@ git-push:
 	TARGET_BRANCH=$(TARGET_BRANCH) \
 	CURRENT_BRANCH=$(CURRENT_BRANCH) \
 	-f $(SCRIPT_DIR)/git.mk
+
+.PHONY:docker-test
+docker-test:
+	cd ./devcontainer/$(CONTAINER_NAME_TAG); \
+	docker build .

@@ -6,6 +6,7 @@ on:
       - 'golang-1.16'
       - 'debian-buster'
       - 'terraform'
+      - 'ruby-3.0'
 jobs:
   push_to_registry:
     name: Build Docker image from Dockerfile
