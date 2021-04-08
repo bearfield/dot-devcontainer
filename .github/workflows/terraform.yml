@@ -7,7 +7,7 @@ jobs:
     name: Build Docker image from Dockerfile
     runs-on: ubuntu-latest
     env:
-      TERRAFORM_VERSION: "0.14.7"
+      TERRAFORM_VERSION: "0.14.10"
     steps:
       - name: Get Branch Name
         run: echo "::set-output name=BRANCH_NAME::terraform"
