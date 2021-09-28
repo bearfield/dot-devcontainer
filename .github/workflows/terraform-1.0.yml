@@ -1,4 +1,4 @@
-name: terraform docker image creation
+name: terraform-1.0 docker image creation
 on:
   schedule:
     - cron: '0 19 * * *'
