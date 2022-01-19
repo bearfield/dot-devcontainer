@@ -17,6 +17,7 @@ RUN apt update \
         sudo \
         curl \
         gnupg \
+        make \
 #
 # Add HashiCorp Linux repository and install packer.
     && curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
