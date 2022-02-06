@@ -3,7 +3,7 @@
     "image": "kumanoryo/terraform-1.1:latest",
 
     "settings": {
-        "terminal.intergrated.shell.linux": "/bin/bash",
+        "terminal.intergrated.shell.linux": "/usr/bin/fish",
         "[terraform]": {
             "editor.formatOnSave": true
         },
@@ -16,7 +16,8 @@
 
     "mounts": [
         "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
-        "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+        "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.config/gcloud,target=/home/vscode/.config/gcloud,type=bind,consistency=cached"
     ],
     "extensions": [
 		"hashicorp.terraform"
