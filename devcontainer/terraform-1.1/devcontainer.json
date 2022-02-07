@@ -4,6 +4,11 @@
 
     "settings": {
         "terminal.intergrated.shell.linux": "/usr/bin/fish",
+        "workbench.colorCustomizations": {
+            "titleBar.activeBackground": "#7B42BC",
+            "activityBarBadge.background": "#7B42BC",
+            "statusBar.background": "#7B42BC"
+        },
         "[terraform]": {
             "editor.formatOnSave": true
         },

@@ -3,7 +3,12 @@
     "image": "kumanoryo/packer-1.7:latest",
 
     "settings": {
-        "terminal.intergrated.shell.linux": "/usr/bin/fish"
+        "terminal.intergrated.shell.linux": "/usr/bin/fish",
+        "workbench.colorCustomizations": {
+            "titleBar.activeBackground": "#02A8EF",
+            "activityBarBadge.background": "#02A8EF",
+            "statusBar.background": "#02A8EF"
+        }
     },
 
     "remoteUser": "vscode",
