@@ -1,7 +1,7 @@
 FROM debian:bullseye-slim
 #
 # set argument
-ARG USER_NAME=vscode
+ARG USER_NAME=kumano_ryo
 ARG USER_ID=501
 ARG GROUP_NAME=$USER_NAME
 ARG GROUP_ID=$USER_ID
