@@ -3,7 +3,11 @@
     "image": "kumanoryo/golang-1.17:latest",
 
     "settings": {
-        "terminal.intergrated.shell.linux": "/bin/bash",
+        "terminal.intergrated.shell.linux": "/usr/bin/fish",
+        "workbench.colorCustomizations": {
+            "statusBar.background": "#00ADD8",
+            "statusBar.foreground": "#D82B00"
+        },
         "go.interGopath": false,
         "go.useLanguageServer": true,
         "go.toolsEnvVars": {
@@ -25,11 +29,12 @@
         ]
     },
 
-    "remoteUser": "vscode",
+    "remoteUser": "kumano_ryo",
 
     "mounts": [
         "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
-        "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+        "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.config/gcloud,target=/home/kumano_ryo/.config/gcloud,type=bind,consistency=cached"
     ],
 
     "extensions": [
