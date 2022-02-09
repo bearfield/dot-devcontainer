@@ -11,7 +11,7 @@
         "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
         "workbench.colorCustomizations": {
             "statusBar.background": "#00ADD8",
-            "statusBar.foreground": "#000080"
+            "statusBar.foreground": "#000000"
         },
         "go.interGopath": false,
         "go.useLanguageServer": true,
