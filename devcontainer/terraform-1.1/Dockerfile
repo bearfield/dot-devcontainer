@@ -5,7 +5,7 @@ ARG USER_NAME=kumano_ryo
 ARG USER_ID=501
 ARG GROUP_NAME=$USER_NAME
 ARG GROUP_ID=$USER_ID
-ARG TERRAFORM_VERSION
+ARG TERRAFORM_VERSION=1.1.*
 #
 # install packages and tools
 ENV DEBIAN_FRONTEND=noninteractive
@@ -20,6 +20,17 @@ RUN apt-get update \
         make \
         peco \
         fish \
+        locales \
+#
+# set locale
+    && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
+    && locale-gen \
+    && update-locale LANG=en_US.UTF-8 \
+    && update-locale LC_CTYPE=en_US.UTF-8 \
+#
+# install powerline patched fonts
+    && apt-get install -y \
+        fonts-powerline \
 #
 # Add HashiCorp Linux repository and install terraform.
     && curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
@@ -50,6 +61,8 @@ RUN curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fishe
 # insetall my fish plugin
 RUN fisher install kumanoryo/peco_select_gce_ssh
 RUN fisher install kumanoryo/peco_select_gcp_project
+# power line style
+RUN fisher install oh-my-fish/theme-bobthefish
 #
 # set env
 ENV DEBIAN_FRONTEND=dialog

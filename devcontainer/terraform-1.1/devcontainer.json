@@ -3,10 +3,15 @@
     "image": "kumanoryo/terraform-1.1:latest",
 
     "settings": {
-        "terminal.intergrated.shell.linux": "/usr/bin/fish",
+        "terminal.integrated.profiles.linux": {
+            "fish": {
+                "path": "fish"
+            }
+        },
+        "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
         "workbench.colorCustomizations": {
             "statusBar.background": "#7B42BC",
-            "statusBar.foreground": "#83BC42"
+            "statusBar.foreground": "#FFFFFF"
         },
         "[terraform]": {
             "editor.formatOnSave": true

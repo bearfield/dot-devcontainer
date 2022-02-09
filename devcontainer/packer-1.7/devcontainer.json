@@ -3,10 +3,15 @@
     "image": "kumanoryo/packer-1.7:latest",
 
     "settings": {
-        "terminal.intergrated.shell.linux": "/usr/bin/fish",
+        "terminal.integrated.profiles.linux": {
+            "fish": {
+                "path": "fish"
+            }
+        },
+        "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
         "workbench.colorCustomizations": {
             "statusBar.background": "#02A8EF",
-            "statusBar.foreground": "#EF4902"
+            "statusBar.foreground": "#000000"
         }
     },
 
