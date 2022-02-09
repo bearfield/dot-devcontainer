@@ -3,7 +3,12 @@
     "image": "kumanoryo/golang-1.17:latest",
 
     "settings": {
-        "terminal.intergrated.shell.linux": "/usr/bin/fish",
+        "terminal.integrated.profiles.linux": {
+            "fish": {
+                "path": "fish"
+            }
+        },
+        "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
         "workbench.colorCustomizations": {
             "statusBar.background": "#00ADD8",
             "statusBar.foreground": "#000080"
