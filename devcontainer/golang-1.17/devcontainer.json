@@ -30,8 +30,14 @@
         },
         "go.lintTool": "golangci-lint",
         "go.lintFlags": [
-            "--fast"
-        ]
+            "--fast",
+            "--print-issued-lines=false",
+            "--out-format=colored-line-number",
+            "--issues-exit-code=0"
+        ],
+        "go.testFlags": ["-v", "-count=1"],
+        "go.testEnvVars": {
+        }
     },
 
     "remoteUser": "kumano_ryo",
