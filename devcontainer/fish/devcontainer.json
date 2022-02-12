@@ -1,0 +1,27 @@
+{
+    "name": "fish",
+    "image": "kumanoryo/fish:latest",
+
+    "settings": {
+        "terminal.integrated.profiles.linux": {
+            "fish": {
+                "path": "fish"
+            }
+        },
+        "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+        "workbench.colorCustomizations": {
+            "statusBar.background": "#859900",
+            "statusBar.foreground": "#FFFFFF"
+        }
+    },
+
+    "remoteUser": "kumano_ryo",
+
+    "mounts": [
+        "source=${localEnv:HOME}/.gitconfig,target=/home/kumano_ryo/.gitconfig,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.ssh,target=/home/kumano_ryo/.ssh,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.config/gcloud,target=/home/kumano_ryo/.config/gcloud,type=bind,consistency=cached"
+    ],
+    "extensions": [
+	]
+}
